@@ -1,0 +1,7 @@
+文件中所给的代码github链接：
+https://github.com/GeorgeTzannetos/badnets（攻击）
+https://github.com/bolunwang/backdoor（防御）
+其他参考代码链接：
+https://github.com/verazuo/badnets-pytorch（攻击）
+https://github.com/Kooscii/BadNets（攻击）
+https://github.com/tonggege001/MyNeuralCleanse（防御）
