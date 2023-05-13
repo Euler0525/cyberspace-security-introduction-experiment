@@ -1,0 +1,38 @@
+<!DOCTYPE html5>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>第13章实验</title>
+</head>
+
+<body>
+<h1>本地 Web 攻击与防御</h1>
+
+<h2>1. 反射型攻击(查询功能)</h2>
+    <form action="" method="get">
+        <input type="text" name="content" placeholder="查询内容">
+        <input type="submit" name="submit" value="查询"> 
+    </form>
+
+{%if query%}
+    <h4>查询 {{query|safe}} 结果如下：</h4>
+{%else%}
+<h4>所有内容如下: </h4>
+{%endif%}
+
+
+{% for comment in comments %}
+<td>{{comment|safe}}</td>
+<br>
+{% endfor %}
+
+<h2>2. 持久型攻击(提交功能)</h2>
+    <form action="" method="post">
+        <input type="text" name="input" placeholder="提交内容">
+        <input type="submit" name="submit" value="提交"> 
+    </form>
+
+
+</body>
+</html>

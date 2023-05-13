@@ -1,14 +1,6 @@
-from flask import Flask, render_template
+# 持久型攻击
 
-app = Flask(__name__)
 
-@app.route('/')
-def home():
-    return 'Hello, World!'
+from flask_sqlalchemy import SQLAlchemy
 
-@app.route('/name/<name>')
-def get_name(name):
-    return render_template('name.html', name=name)
-
-if __name__ == '__main__':
-    app.run()
+db = SQLAlchemy(app)

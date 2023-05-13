@@ -1,5 +1,4 @@
-# /?name={% for i in range(19) %}{{ i }}{% endfor %}
-
+# 反射型攻击
 
 from flask import Flask, request
 from jinja2 import Template
