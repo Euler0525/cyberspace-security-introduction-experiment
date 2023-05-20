@@ -10,7 +10,7 @@ import argparse
 # Main file for the training set poisoning based on paper BadNets.
 
 parser = argparse.ArgumentParser()
-parser.add_argument('--dataset', default='cifar', help='The dataset of choice between "cifar" and "mnist".')
+parser.add_argument('--dataset', default='mnist', help='The dataset of choice between "cifar" and "mnist".')
 parser.add_argument('--proportion', default=0.1, type=float, help='The proportion of training data which are poisoned.')
 parser.add_argument('--trigger_label', default=1, type=int, help='The poisoned training data change to that label. Valid only for single attack option.')
 parser.add_argument('--batch_size', default=64, type=int, help='The batch size used for training.')
