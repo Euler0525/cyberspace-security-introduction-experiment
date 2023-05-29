@@ -2,6 +2,7 @@ from torch import nn
 import torch.nn.functional as F
 
 
+# 基于两个卷积层和两个全连接层
 class BadNet(nn.Module):
     """ Badnet model class based on the description of table1 of the paper with two convolution
     and two fully connected layers """
@@ -9,6 +10,8 @@ class BadNet(nn.Module):
         super().__init__()
         self.input_size = input_size
         self.output = output
+        
+        # 定义卷积参数
         self.conv1 = nn.Conv2d(in_channels=input_size, out_channels=16, kernel_size=(5, 5))
         self.conv2 = nn.Conv2d(in_channels=16, out_channels=32, kernel_size=(5, 5))
         self.pool = nn.AvgPool2d(kernel_size=2, stride=2)
@@ -32,4 +35,3 @@ class BadNet(nn.Module):
         x = self.fc2(x)
         x = F.softmax(x)
         return x
-

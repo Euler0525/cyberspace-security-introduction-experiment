@@ -95,5 +95,3 @@ def reshape_before_training(data):
 def vis_img(array):
     plt.imshow(array)
     plt.show()
-
-

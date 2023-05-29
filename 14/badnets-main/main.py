@@ -10,12 +10,18 @@ import argparse
 # Main file for the training set poisoning based on paper BadNets.
 
 parser = argparse.ArgumentParser()
+# 数字识别攻击
 parser.add_argument('--dataset', default='mnist', help='The dataset of choice between "cifar" and "mnist".')
+# 有毒的训练模型的比例
 parser.add_argument('--proportion', default=0.1, type=float, help='The proportion of training data which are poisoned.')
+# 对单一攻击有效
 parser.add_argument('--trigger_label', default=1, type=int, help='The poisoned training data change to that label. Valid only for single attack option.')
+# 用于训练的批量
 parser.add_argument('--batch_size', default=64, type=int, help='The batch size used for training.')
 parser.add_argument('--epochs', default=20, type=int, help='Number of epochs.')
+# 攻击形式
 parser.add_argument('--attack_type', default="single", help='The type of attack used. Choose between "single" and "all".')
+# 如果为True，则仅评估经过训练的加载模型
 parser.add_argument('--only_eval', default=False, type=bool, help='If true, only evaluate trained loaded models')
 args = parser.parse_args()
 

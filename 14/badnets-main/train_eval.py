@@ -3,9 +3,7 @@ from tqdm import tqdm
 from sklearn.metrics import classification_report
 
 
-# Normal training step with the poisoning dataset
-
-
+# 使用中毒模型训练
 def train(model, data_loader, criterion, optimizer):
     """
     Function for model training step
@@ -23,8 +21,6 @@ def train(model, data_loader, criterion, optimizer):
 
 
 # Simple evaluation with the addition of a classification report with precision and recall
-
-
 def eval(model, test_loader, batch_size=64, report=True):
     """
     Simple evaluation with the addition of a classification report.
@@ -48,4 +44,3 @@ def eval(model, test_loader, batch_size=64, report=True):
             print(classification_report(gt.cpu(), preds.cpu()))
 
     return int(ret) / (step * batch_size)
-
